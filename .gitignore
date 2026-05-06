@@ -1,0 +1,29 @@
+.DS_Store
+target/
+**/target/
+dependency-reduced-pom.xml
+__pycache__/
+*.pyc
+*.log
+runtime/
+
+# Local IDE and Python environments
+.idea/
+.vscode/
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Runtime caches and generated state
+logs/
+checkpoints/
+savepoints/
+.pytest_cache/
+.mypy_cache/
+
+# Docker and local build downloads
+*.tgz
+*.tar.gz
+*.zip
