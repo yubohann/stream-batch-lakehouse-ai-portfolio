@@ -26,22 +26,22 @@ This private portfolio packages three stream-batch big data labs as standalone p
 
 ```text
 stream-batch-lakehouse-ai-portfolio/
-├── 01-modern-lakehouse/
-│   ├── docker-compose.yml
-│   ├── order_stream_producer.py
-│   ├── lakehouse_batch_analysis.py
-│   ├── dinky_dual_stream_job.sql
-│   ├── flink-dual-stream-job/
-│   ├── lib/flink-connectors/
-│   ├── docker/spark-local/
-│   └── SCREENSHOT_GUIDE.md
-├── 02-streaming-challenges/
-│   ├── instruction.md
-│   ├── report.md
-│   └── acceptance_requirements.md
-└── 03-ai-recommender/
-    ├── flink-jobs/realtime-recommender-flink-job/
-    └── recommender-services/
+|-- 01-modern-lakehouse/
+|   |-- docker-compose.yml
+|   |-- order_stream_producer.py
+|   |-- lakehouse_batch_analysis.py
+|   |-- dinky_dual_stream_job.sql
+|   |-- flink-dual-stream-job/
+|   |-- lib/flink-connectors/
+|   |-- docker/spark-local/
+|   `-- SCREENSHOT_GUIDE.md
+|-- 02-streaming-challenges/
+|   |-- instruction.md
+|   |-- report.md
+|   `-- acceptance_requirements.md
+`-- 03-ai-recommender/
+    |-- flink-jobs/realtime-recommender-flink-job/
+    `-- recommender-services/
 ```
 
 ## Labs

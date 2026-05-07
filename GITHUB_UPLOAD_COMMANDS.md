@@ -23,15 +23,17 @@ Recommended permissions:
 ## Option A: GitHub CLI
 
 ```powershell
+Set-Location "C:\Users\Administrator\Desktop\作品集\stream-batch-lakehouse-ai-portfolio-redacted"
 gh auth login
-gh repo create <OWNER>/stream-batch-lakehouse-ai-portfolio --private --description "End-to-end stream-batch big data portfolio with Kafka, Flink, MinIO, Paimon, Spark, reliability playbooks, and real-time AI recommender services." --source . --remote origin --push
+gh repo create yubohan79-glitch/stream-batch-lakehouse-ai-portfolio --private --description "End-to-end stream-batch big data portfolio with Kafka, Flink, MinIO, Paimon, Spark, reliability playbooks, and real-time AI recommender services." --source . --remote origin --push
 ```
 
 ## Option B: GitHub Token
 
 ```powershell
+Set-Location "C:\Users\Administrator\Desktop\作品集\stream-batch-lakehouse-ai-portfolio-redacted"
 $env:GITHUB_TOKEN="<TOKEN_WITH_REPO_SCOPE>"
-$owner="<OWNER>"
+$owner="yubohan79-glitch"
 $repo="stream-batch-lakehouse-ai-portfolio"
 $body = @{
   name = $repo
@@ -45,5 +47,16 @@ Invoke-RestMethod -Method Post -Uri "https://api.github.com/user/repos" -Headers
 } -Body $body -ContentType "application/json"
 
 git remote add origin "https://github.com/$owner/$repo.git"
+git push -u origin main
+```
+
+## Existing Repository Push
+
+Use this path when the repository already exists on GitHub:
+
+```powershell
+Set-Location "C:\Users\Administrator\Desktop\作品集\stream-batch-lakehouse-ai-portfolio-redacted"
+git remote add origin "https://github.com/yubohan79-glitch/stream-batch-lakehouse-ai-portfolio.git"
+git branch -M main
 git push -u origin main
 ```
