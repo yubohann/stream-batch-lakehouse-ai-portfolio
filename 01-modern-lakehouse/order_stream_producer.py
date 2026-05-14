@@ -1,4 +1,4 @@
-﻿import json
+import json
 import os
 import random
 import time
@@ -9,7 +9,7 @@ from kafka import KafkaProducer
 
 STUDENT_ID = os.getenv("STUDENT_ID", "demo000000")
 CLASS_NO = os.getenv("CLASS_NO", "0")
-STUDENT_NAME = os.getenv("STUDENT_NAME", "\u4f59\u535a\u6db5")
+STUDENT_NAME = os.getenv("STUDENT_NAME", "REDACTED")
 TOPIC = os.getenv("KAFKA_TOPIC", f"ecommerce_orders_{STUDENT_ID}")
 BOOTSTRAP_SERVERS = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092")
 

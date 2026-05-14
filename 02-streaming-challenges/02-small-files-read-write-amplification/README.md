@@ -1,7 +1,7 @@
-﻿# Challenge 02: Small Files And Read-Write Amplification
+# Challenge 02: Small Files And Read-Write Amplification
 
 Student: REDACTED  
-Student ID: REDACTED
+Student ID: demo000000
 
 This folder contains the acceptance checklist and evidence area for the small-file challenge. It focuses on reproducing frequent small Paimon files, applying compaction, and comparing query performance.
 

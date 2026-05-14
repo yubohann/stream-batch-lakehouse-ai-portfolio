@@ -1,6 +1,6 @@
-﻿# Acceptance Checklist: MinIO Access Bottleneck
+# Acceptance Checklist: MinIO Access Bottleneck
 
-Student ID: REDACTED
+Student ID: `demo000000`
 
 ## 7.1 Environment
 

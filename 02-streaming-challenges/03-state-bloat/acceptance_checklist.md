@@ -1,6 +1,6 @@
-﻿# Acceptance Checklist: Flink State Bloat
+# Acceptance Checklist: Flink State Bloat
 
-Student ID: REDACTED
+Student ID: `demo000000`
 
 ## 3.1 Environment
 

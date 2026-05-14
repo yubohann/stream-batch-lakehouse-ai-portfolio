@@ -1,4 +1,4 @@
-﻿import os
+import os
 
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
@@ -6,7 +6,7 @@ from pyspark.sql.functions import col
 
 STUDENT_ID = os.getenv("STUDENT_ID", "demo000000")
 CLASS_NO = os.getenv("CLASS_NO", "0")
-STUDENT_NAME = os.getenv("STUDENT_NAME", "\u4f59\u535a\u6db5")
+STUDENT_NAME = os.getenv("STUDENT_NAME", "REDACTED")
 
 CATALOG = os.getenv("PAIMON_CATALOG", f"paimon_catalog_{STUDENT_ID}")
 BUCKET = os.getenv("PAIMON_BUCKET", f"paimon-data-{STUDENT_ID}")

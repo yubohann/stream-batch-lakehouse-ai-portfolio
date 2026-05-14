@@ -1,6 +1,6 @@
-﻿# Acceptance Checklist: Schema Evolution
+# Acceptance Checklist: Schema Evolution
 
-Student ID: REDACTED
+Student ID: `demo000000`
 
 ## 6.1 Environment
 

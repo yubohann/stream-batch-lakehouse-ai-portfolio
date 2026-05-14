@@ -1,6 +1,6 @@
-﻿# Acceptance Checklist: Exactly-Once And Duplicate Data
+# Acceptance Checklist: Exactly-Once And Duplicate Data
 
-Student ID: REDACTED
+Student ID: `demo000000`
 
 ## 5.1 Environment
 

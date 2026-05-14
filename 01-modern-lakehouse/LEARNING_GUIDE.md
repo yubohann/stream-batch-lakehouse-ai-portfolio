@@ -1,8 +1,8 @@
-﻿# 01-modern-lakehouse 学习导读
+# 01-modern-lakehouse 学习导读
 
 作者：REDACTED  
-学号：demo000000  
-班级序号：32
+学号：REDACTED
+班级序号：REDACTED
 
 这个目录对应的是“现代流批一体数据湖”实验。你可以把它理解成一条完整的数据链路：
 

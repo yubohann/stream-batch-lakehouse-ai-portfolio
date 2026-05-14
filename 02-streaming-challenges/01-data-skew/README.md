@@ -1,7 +1,7 @@
-﻿# Challenge 01: Data Skew
+# Challenge 01: Data Skew
 
 Student: REDACTED  
-Student ID: REDACTED
+Student ID: demo000000
 
 This folder contains the acceptance checklist and evidence area for the Data Skew challenge. It focuses on reproducing hot-key skew, observing Flink back pressure, and validating two-stage salted aggregation.
 

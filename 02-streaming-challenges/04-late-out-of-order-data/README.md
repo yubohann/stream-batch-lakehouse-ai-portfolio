@@ -1,7 +1,7 @@
-﻿# Challenge 04: Late And Out-Of-Order Data
+# Challenge 04: Late And Out-Of-Order Data
 
 Student: REDACTED  
-Student ID: REDACTED
+Student ID: demo000000
 
 This folder contains the acceptance checklist and evidence area for late and out-of-order event handling. It focuses on Watermark, allowed lateness, side output, and result correctness.
 

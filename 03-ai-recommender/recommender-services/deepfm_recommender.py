@@ -78,15 +78,17 @@ class FM(nn.Module):
                 self.linear[feature_name] = nn.Linear(1, 1, bias=False)
 
     def forward(self, features):
-        linear_term = self.bias.clone()
+        first_feature = next(iter(features.values()))
+        batch_size = first_feature.shape[0]
+        linear_term = self.bias.expand(batch_size)
         
         for feature_name in self.feature_dims:
             if self.feature_dims[feature_name] > 1:
                 feat = features[feature_name].squeeze(1)
-                linear_term += self.linear[feature_name](feat).squeeze()
+                linear_term = linear_term + self.linear[feature_name](feat).squeeze(-1)
             else:
                 feat = features[feature_name]
-                linear_term += self.linear[feature_name](feat).squeeze()
+                linear_term = linear_term + self.linear[feature_name](feat).squeeze(-1)
         
         fm_embeddings = []
         for feature_name in self.feature_dims:
@@ -146,10 +148,10 @@ class DeepFM(nn.Module):
                 dnn_embeddings.append(feat)
         
         dnn_input = torch.cat(dnn_embeddings, dim=1)
-        dnn_output = self.dnn(dnn_input).squeeze()
+        dnn_output = self.dnn(dnn_input).squeeze(-1)
         
         combined = torch.stack([fm_output, dnn_output], dim=1)
-        output = self.final(combined).squeeze()
+        output = self.final(combined).squeeze(-1)
         
         return torch.sigmoid(output)
 
@@ -167,7 +169,8 @@ class DeepFMRecommender:
         print("🤖 开始训练DeepFM推荐模型")
         print("="*80)
         
-        dataset = DeepFMDataset(interactions_df, item_features_df, item_features_df)
+        user_features_df = interactions_df[['user_id']].drop_duplicates().reset_index(drop=True)
+        dataset = DeepFMDataset(interactions_df, user_features_df, item_features_df)
         
         train_size = int(0.8 * len(dataset))
         val_size = len(dataset) - train_size
@@ -196,7 +199,7 @@ class DeepFMRecommender:
                 optimizer.zero_grad()
                 
                 features = {k: v.to(self.device) for k, v in batch.items() if k != 'label'}
-                labels = batch['label'].to(self.device)
+                labels = batch['label'].to(self.device).squeeze(-1)
                 
                 outputs = self.model(features)
                 loss = criterion(outputs, labels)
@@ -212,7 +215,7 @@ class DeepFMRecommender:
             with torch.no_grad():
                 for batch in val_loader:
                     features = {k: v.to(self.device) for k, v in batch.items() if k != 'label'}
-                    labels = batch['label'].to(self.device)
+                    labels = batch['label'].to(self.device).squeeze(-1)
                     
                     outputs = self.model(features)
                     loss = criterion(outputs, labels)

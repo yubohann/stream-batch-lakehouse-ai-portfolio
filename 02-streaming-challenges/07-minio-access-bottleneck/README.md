@@ -1,7 +1,7 @@
-﻿# Challenge 07: MinIO Access Bottleneck
+# Challenge 07: MinIO Access Bottleneck
 
 Student: REDACTED  
-Student ID: REDACTED
+Student ID: demo000000
 
 This folder contains the acceptance checklist and evidence area for object-storage access bottlenecks. It focuses on ListObjects overhead, partition pruning, bucket layout, statistics, and predicate pushdown.
 

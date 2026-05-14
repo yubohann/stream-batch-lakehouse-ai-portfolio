@@ -1,7 +1,7 @@
-﻿# Challenge 03: Flink State Bloat
+# Challenge 03: Flink State Bloat
 
 Student: REDACTED  
-Student ID: REDACTED
+Student ID: demo000000
 
 This folder contains the acceptance checklist and evidence area for the Flink state bloat challenge. It focuses on state growth, checkpoint impact, TTL, backend choice, and state cleanup.
 

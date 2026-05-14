@@ -6,7 +6,7 @@ import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
 import org.apache.flink.table.api.EnvironmentSettings;
-import org.apache.flink.table.api.TableEnvironment;
+import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 import org.json.JSONObject;
 
 import java.util.Properties;
@@ -17,7 +17,7 @@ public class FeatureExtraction {
         env.setParallelism(2);
         env.enableCheckpointing(10000);
 
-        TableEnvironment tEnv = TableEnvironment.create(env, EnvironmentSettings.inStreamingMode());
+        StreamTableEnvironment tEnv = StreamTableEnvironment.create(env, EnvironmentSettings.inStreamingMode());
 
         Properties properties = new Properties();
         properties.setProperty("bootstrap.servers", "localhost:9092");

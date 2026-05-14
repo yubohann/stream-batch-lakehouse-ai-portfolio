@@ -1,6 +1,6 @@
-﻿# Acceptance Checklist: Data Skew
+# Acceptance Checklist: Data Skew
 
-Student ID: REDACTED
+Student ID: `demo000000`
 
 ## 1.1 Environment
 

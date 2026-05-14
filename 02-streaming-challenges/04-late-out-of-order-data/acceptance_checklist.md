@@ -1,6 +1,6 @@
-﻿# Acceptance Checklist: Late And Out-Of-Order Data
+# Acceptance Checklist: Late And Out-Of-Order Data
 
-Student ID: REDACTED
+Student ID: `demo000000`
 
 ## 4.1 Environment
 

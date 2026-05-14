@@ -1,7 +1,7 @@
-﻿# Challenge 06: Schema Evolution
+# Challenge 06: Schema Evolution
 
 Student: REDACTED  
-Student ID: REDACTED
+Student ID: demo000000
 
 This folder contains the acceptance checklist and evidence area for schema evolution. It focuses on Paimon schema changes, compatibility, default values, and historical data reads.
 

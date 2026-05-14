@@ -1,4 +1,4 @@
-﻿# Stream-Batch Business Challenges
+# Stream-Batch Business Challenges
 
 Author: REDACTED  
 Student ID: REDACTED  

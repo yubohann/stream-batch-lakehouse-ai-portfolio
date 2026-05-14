@@ -39,6 +39,8 @@ class RealtimeRecommendationService:
         
         self.is_running = False
         self.model_trained = False
+        self.interaction_count = 0
+        self.last_train_interaction_count = 0
         
         print("="*80)
         print("🚀 实时推荐服务初始化完成")
@@ -68,6 +70,24 @@ class RealtimeRecommendationService:
             self.recommender.add_interaction(
                 user_id, product_id, behavior_type, category, price, timestamp
             )
+
+            self.interaction_count += 1
+            self.train_model_if_needed()
+
+    def train_model_if_needed(self, min_new_interactions: int = 10):
+        if self.model_trained and self.interaction_count - self.last_train_interaction_count < min_new_interactions:
+            return
+
+        user_count = len(self.user_profiles)
+        if user_count == 0 or self.interaction_count == 0:
+            return
+
+        print(f"\n🔄 [{datetime.now().strftime('%H:%M:%S')}] 训练协同过滤模型...")
+        print(f"   用户数: {user_count}, 交互数: {self.interaction_count}")
+        self.recommender.train()
+        self.model_trained = True
+        self.last_train_interaction_count = self.interaction_count
+        print("   ✅ 协同过滤模型训练完成")
     
     def generate_recommendations(self, user_id: str, n: int = 5) -> dict:
         with self.user_profiles_lock:
@@ -113,13 +133,7 @@ class RealtimeRecommendationService:
                 time.sleep(interval_seconds)
                 
                 with self.user_profiles_lock:
-                    user_count = len(self.user_profiles)
-                    if user_count >= 3:
-                        print(f"\n🔄 [{datetime.now().strftime('%H:%M:%S')}] 开始训练协同过滤模型...")
-                        print(f"   用户数: {user_count}")
-                        self.recommender.train()
-                        self.model_trained = True
-                        print(f"   ✅ 模型训练完成！")
+                    self.train_model_if_needed()
             except Exception as e:
                 print(f"❌ 模型训练出错: {e}")
     

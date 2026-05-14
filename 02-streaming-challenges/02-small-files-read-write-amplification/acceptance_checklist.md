@@ -1,6 +1,6 @@
-﻿# Acceptance Checklist: Small Files And Read-Write Amplification
+# Acceptance Checklist: Small Files And Read-Write Amplification
 
-Student ID: REDACTED
+Student ID: `demo000000`
 
 ## 2.1 Environment
 

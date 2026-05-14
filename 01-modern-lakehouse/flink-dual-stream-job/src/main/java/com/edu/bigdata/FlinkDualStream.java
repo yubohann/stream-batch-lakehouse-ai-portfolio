@@ -1,4 +1,4 @@
-﻿package com.edu.bigdata;
+package com.edu.bigdata;
 
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.EnvironmentSettings;
@@ -8,8 +8,8 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 
 public class FlinkDualStream {
     private static final String DEFAULT_STUDENT_ID = "demo000000";
-    private static final String DEFAULT_CLASS_NO = "32";
-    private static final String DEFAULT_STUDENT_NAME = "\u4f59\u535a\u6db5";
+    private static final String DEFAULT_CLASS_NO = "REDACTED";
+    private static final String DEFAULT_STUDENT_NAME = "REDACTED";
 
     public static void main(String[] args) throws Exception {
         String studentId = env("STUDENT_ID", DEFAULT_STUDENT_ID);

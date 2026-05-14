@@ -1,4 +1,4 @@
-﻿# Stream-Batch AI Recommender
+# Stream-Batch AI Recommender
 
 Author: REDACTED  
 Student ID: REDACTED  

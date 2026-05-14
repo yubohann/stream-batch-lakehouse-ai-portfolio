@@ -1,7 +1,7 @@
-﻿# Challenge 05: Exactly-Once And Duplicate Data
+# Challenge 05: Exactly-Once And Duplicate Data
 
 Student: REDACTED  
-Student ID: REDACTED
+Student ID: demo000000
 
 This folder contains the acceptance checklist and evidence area for cross-component exactly-once verification. It focuses on Kafka transactions, Flink checkpoints, Paimon transactional writes, and duplicate detection.
 
